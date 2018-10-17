@@ -21,10 +21,19 @@ def rpc(sock, route, params):
 
 if __name__ == '__main__':
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect(("localhost", 9000))
+    s.connect(("localhost", 8080))
+    '''
     for i in range(10):
         out, result = rpc(s, "ping", "pi %d" %i)
         print out, result
         time.sleep(1)
+    '''
 
+    # out, result = rpc(s, "ping", "pi 1")
+    # out2, result = rpc(s, "fab", "10")
+    out3, result = rpc(s, "r_insert", "a,123")
+    out4, result = rpc(s, "r_get", "a")
+    # print out2, result
+    print out3, result
+    print out4, result
     s.close()
