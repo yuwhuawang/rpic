@@ -59,7 +59,7 @@ def redis_get(conn, params):
 def redis_insert(conn, params):
     try:
         key, value = params.split(',')
-    except  ValueError, TypeError:
+    except  ValueError:
         return "BAD REQUEST"
     sim_redis = SimRedis()
     out = sim_redis.insert(key, value)
@@ -89,8 +89,8 @@ if __name__ == '__main__':
     handlers = {
         "ping": ping,
         "fab": fab_handler,
-        "r_get": redis_get,
-        "r_insert": redis_insert
+        "rget": redis_get,
+        "rput": redis_insert
     }
     loop(sock, handlers)
 

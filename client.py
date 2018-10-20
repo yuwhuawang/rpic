@@ -31,8 +31,8 @@ if __name__ == '__main__':
 
     # out, result = rpc(s, "ping", "pi 1")
     # out2, result = rpc(s, "fab", "10")
-    out3, result = rpc(s, "r_insert", "a,123")
-    out4, result = rpc(s, "r_get", "a")
+    out3, result = rpc(s, "rput", "a,123")
+    out4, result = rpc(s, "rget", "a")
     # print out2, result
     print out3, result
     print out4, result
